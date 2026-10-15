@@ -59,7 +59,8 @@ npm run dev              # then open http://localhost:5173 (NOT 127.0.0.1 — se
 ## 3. First run
 
 1. Open http://localhost:5173 → **Create an account** (min 8 chars, letter + number).
-2. **Integrations → Load demo data** (8 customers, 12 orders, timeline, follow-ups — `mode: "demo"`, owned by you).
+2. Add your first **customer**, then an **order** — every record you see is data
+   you entered yourself; there is no sample or imported data anywhere.
 3. **Dashboard** — your real numbers, date filters, revenue chart.
 4. **Customers** → profile → log **communications**, **notes**, **follow-ups**; **Orders** → create with line items (totals computed server-side), change status, expand for history; **Activity** shows the audit trail; **Settings** → profile, password, delete account.
 
@@ -91,7 +92,6 @@ npm run dev              # then open http://localhost:5173 (NOT 127.0.0.1 — se
 | GET/POST/PATCH/DELETE | `/interactions` | call/email/meeting/note + status/schedule |
 | GET/POST/PATCH/DELETE | `/followups` | overdue/upcoming filters, `is_overdue` |
 | GET | `/activity` | Read-only audit trail |
-| GET/POST | `/integrations/woocommerce/status`, `/sync` | Never returns secrets; sync assigns to you |
 
 ## 6. Tests executed (73/73 passing, live MySQL + running server)
 
