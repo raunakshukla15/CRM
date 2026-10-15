@@ -6,8 +6,6 @@ Accounts are first-class: bcrypt passwords, **server-side sessions in MySQL**
 permanent account deletion. WooCommerce sync/webhooks exist but are **on hold**
 (demo mode available per user).
 
-> Deploying to production? See **[DEPLOY.md](./DEPLOY.md)** (Netlify + Render + hosted MySQL).
-
 ```
 Killowatt/
 ├── backend/    FastAPI + SQLAlchemy + Alembic + MySQL (port 8000)
@@ -47,9 +45,16 @@ API docs: http://127.0.0.1:8000/docs · Health: `/health` · DB readiness: `/rea
 ```powershell
 cd ..\frontend
 npm install
-copy .env.example .env   # VITE_API_URL=http://127.0.0.1:8000/api/v1
-npm run dev              # http://localhost:5173
+copy .env.example .env   # VITE_API_URL=http://localhost:8000/api/v1
+npm run dev              # then open http://localhost:5173 (NOT 127.0.0.1 — see below)
 ```
+
+> **Use `localhost` everywhere.** The login session lives in a `SameSite=Lax`
+> cookie, which browsers only send when the site and the API share the same host.
+> Open **http://localhost:5173** with `VITE_API_URL=http://localhost:8000/api/v1`
+> (already the default). If you change `.env`, restart `npm run dev` — Vite reads
+> it once at startup. Opening `http://127.0.0.1:5173` will log you in and then
+> fail every data request with “Not authenticated”.
 
 ## 3. First run
 
@@ -95,11 +100,14 @@ persistence · session expiry/inactivity · logout revocation · password change
 others) · forgot/reset incl. token hashing · delete-account cascade + tombstone ·
 customer/order/communication/follow-up/note CRUD · backend totals + status history ·
 activity entries · dashboard-vs-DB math · **user A/B isolation (404s everywhere)** ·
-422/401/404 handling · 12-table schema check · `vite build` · deploy-config parse.
+422/401/404 handling · 12-table schema check · `vite build`.
 
 ## 7. Troubleshooting
 
 - `'uvicorn' is not recognized` → use `python -m uvicorn …` / `python -m alembic …`
 - Port `8000` serving stale routes → a previous server is still running; stop it and restart
 - Frontend `ERR_NETWORK` → backend not running or `VITE_API_URL` wrong
+- “Not authenticated” on every page after logging in → you opened
+  `http://127.0.0.1:5173` instead of `http://localhost:5173` (or changed `.env`
+  without restarting `npm run dev`)
 - `401 Invalid webhook signature` → `WC_WEBHOOK_SECRET` mismatch (WooCommerce on hold)

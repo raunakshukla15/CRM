@@ -15,7 +15,7 @@ npm run build   # production build -> dist/
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `VITE_API_URL` | `http://127.0.0.1:8000/api/v1` | FastAPI base URL (**note the `/api/v1` prefix**) |
+| `VITE_API_URL` | `http://localhost:8000/api/v1` | FastAPI base URL (**note the `/api/v1` prefix**; keep host `localhost` to match the site origin, otherwise the session cookie is blocked) |
 
 Never put WooCommerce keys here — they live only in the backend `.env`.
 
