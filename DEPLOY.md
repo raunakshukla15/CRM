@@ -79,14 +79,24 @@ under each webhook's **Logs** in WooCommerce.
 ## Step 4 — Deploy frontend on Netlify (5 min)
 
 1. Netlify → **Add new site → Import from git** → same repo.
-   Build settings are pre-filled from `netlify.toml` (base `woocrm-frontend`,
-   command `npm run build`, publish `woocrm-frontend/dist`).
+   Build settings are pre-filled from `netlify.toml` (base `frontend`,
+   command `npm run build`, publish `frontend/dist`).
 2. **Site settings → Environment variables** → add:
    - `VITE_API_URL=https://<your-api>.onrender.com/api/v1`
    (Vite bakes this in at build time — changing it requires **Trigger deploy**.)
-3. Back in Render → `killokart-api` → set `BACKEND_CORS_ORIGINS` to include your site:
-   `["https://<your-site>.netlify.app"]` → Save.
-4. Open the site: Dashboard should show your real store numbers.
+3. Back in Render → `killokart-api` → set:
+   - `BACKEND_CORS_ORIGINS` = `["https://<your-site>.netlify.app"]`
+   - `FRONTEND_URL` = `https://<your-site>.netlify.app` (password-reset links)
+   → Save (redeploys).
+4. Open the site: create an account, sign in — the session cookie is
+   `Secure + SameSite=None` automatically in production (`ENVIRONMENT=production`),
+   which is exactly what cross-origin Netlify→Render needs. Refresh the page:
+   you must stay signed in.
+5. Dashboard → Integrations → Load demo data (per-user), then explore.
+
+> Local MySQL (`root`/`root`/`crm_system`) is dev-only. Production uses the hosted
+> database via Render's `DATABASE_URL` — never `localhost`.
+> Migrations run automatically on each API deploy (`alembic upgrade head` in Docker CMD).
 
 ---
 

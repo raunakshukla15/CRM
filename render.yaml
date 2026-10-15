@@ -25,8 +25,8 @@ services:
   - type: web
     name: killokart-api
     env: docker
-    dockerfilePath: ./woocommerce_crm_backend/Dockerfile
-    dockerContext: ./woocommerce_crm_backend
+    dockerfilePath: backend/Dockerfile
+    dockerContext: backend
     healthCheckPath: /health
     envVars:
       - key: ENVIRONMENT
@@ -56,4 +56,6 @@ services:
         sync: false
       - key: SMTP_FROM_EMAIL
         value: no-reply@example.com
+      # Public frontend URL (password-reset links). No trailing slash.
+      - key: FRONTEND_URL
         sync: false
