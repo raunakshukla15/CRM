@@ -1,0 +1,30 @@
+{
+  "id": 5001,
+  "customer_id": 101,
+  "status": "completed",
+  "total": "320.00",
+  "billing": {
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "address_1": "123 Market Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "postcode": "94103",
+    "country": "US",
+    "email": "jane.doe@example.com",
+    "phone": "+1-555-0100"
+  },
+  "shipping": {
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "address_1": "123 Market Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "postcode": "94103",
+    "country": "US"
+  },
+  "line_items": [
+    { "product_id": 11, "name": "T-Shirt", "quantity": 2, "total": "120.00" },
+    { "product_id": 22, "name": "Mug", "quantity": 4, "total": "200.00" }
+  ]
+}

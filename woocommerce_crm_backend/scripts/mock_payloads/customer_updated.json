@@ -1,0 +1,27 @@
+{
+  "id": 101,
+  "email": "jane.doe@example.com",
+  "first_name": "Jane",
+  "last_name": "Doe-Updated",
+  "phone": "+1-555-0199",
+  "billing": {
+    "first_name": "Jane",
+    "last_name": "Doe-Updated",
+    "address_1": "456 New Ave",
+    "city": "San Francisco",
+    "state": "CA",
+    "postcode": "94103",
+    "country": "US",
+    "email": "jane.doe@example.com",
+    "phone": "+1-555-0199"
+  },
+  "shipping": {
+    "first_name": "Jane",
+    "last_name": "Doe-Updated",
+    "address_1": "456 New Ave",
+    "city": "San Francisco",
+    "state": "CA",
+    "postcode": "94103",
+    "country": "US"
+  }
+}

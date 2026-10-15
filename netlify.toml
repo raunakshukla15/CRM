@@ -1,0 +1,12 @@
+# Netlify config for the KilloKart frontend.
+# Base directory when connecting the repo: woocrm-frontend
+[build]
+  base = "woocrm-frontend"
+  command = "npm run build"
+  publish = "woocrm-frontend/dist"
+
+# SPA fallback — all routes serve index.html so React Router works.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
