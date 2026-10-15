@@ -43,23 +43,3 @@ class DashboardResponse(BaseModel):
     upcoming_followups: list[dict[str, Any]]
     recent_activity: list[dict[str, Any]]
     orders_by_day: list[dict[str, Any]] = []
-
-
-class WooStatusResponse(BaseModel):
-    configured: bool
-    mode: str  # "live" | "demo"
-    store_url: Optional[str] = None
-    key_hint: Optional[str] = None
-    last_sync_at: Optional[datetime] = None
-    customers_synced: int = 0
-    orders_synced: int = 0
-    message: Optional[str] = None
-
-
-class WooSyncResponse(BaseModel):
-    ok: bool
-    mode: str
-    customers_synced: int
-    orders_synced: int
-    message: str
-    last_sync_at: Optional[datetime] = None

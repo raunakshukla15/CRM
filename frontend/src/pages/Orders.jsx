@@ -161,7 +161,7 @@ export default function Orders() {
       <div className="flex items-start justify-between gap-2">
         <div>
           <h1 className="text-xl font-bold">Orders ({total})</h1>
-          <p className="text-xs text-gray-500">View and manage all WooCommerce orders.</p>
+          <p className="text-xs text-gray-500">View and manage your orders.</p>
         </div>
         <button className={btnPrimary} onClick={() => setModalOpen(true)}>+ New order</button>
       </div>
@@ -178,7 +178,7 @@ export default function Orders() {
         </select>
         <input
           className={inputCls}
-          placeholder="Search WooCommerce order ID…"
+          placeholder="Search order number…"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -192,7 +192,7 @@ export default function Orders() {
         <Loader label="Loading orders…" />
       ) : items.length === 0 ? (
         <Card>
-          <EmptyState title="No orders found" hint="Adjust filters or sync the store." />
+          <EmptyState title="No orders found" hint="Adjust filters or create your first order." />
         </Card>
       ) : (
         <Card>

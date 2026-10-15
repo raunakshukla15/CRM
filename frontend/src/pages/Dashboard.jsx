@@ -99,7 +99,7 @@ export default function Dashboard() {
           action={<Link to="/orders" className={linkAction}>View all →</Link>}
         >
           {data.recent_orders.length === 0 ? (
-            <EmptyState title="No orders yet" hint="Sync the store or wait for webhooks." />
+            <EmptyState title="No orders yet" hint="Create your first order to get started." />
           ) : (
             <ul className="divide-y divide-gray-100 text-xs">
               {data.recent_orders.map((o) => (

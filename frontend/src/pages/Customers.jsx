@@ -115,7 +115,7 @@ export default function Customers() {
         <Loader label="Loading customers…" />
       ) : items.length === 0 ? (
         <Card>
-          <EmptyState title="No customers found" hint="Adjust filters or sync the store." />
+          <EmptyState title="No customers found" hint="Adjust filters or add your first customer." />
         </Card>
       ) : (
         <Card>

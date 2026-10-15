@@ -7,7 +7,6 @@ from app.models.communication_log import CommunicationLog, CommunicationStatus
 from app.models.customer_note import CustomerNote
 from app.models.interaction import Interaction
 from app.models.followup import FollowUp, FollowUpStatus
-from app.models.sync_state import SyncState
 
 __all__ = [
     "Base",
@@ -25,5 +24,4 @@ __all__ = [
     "Interaction",
     "FollowUp",
     "FollowUpStatus",
-    "SyncState",
 ]

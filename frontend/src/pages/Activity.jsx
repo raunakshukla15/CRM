@@ -8,7 +8,7 @@ const ACTIONS = [
   'account.deleted', 'customer.created', 'customer.updated', 'customer.deleted',
   'order.created', 'order.status_changed', 'order.deleted',
   'communication.created', 'communication.updated', 'communication.deleted',
-  'followup.created', 'followup.updated', 'followup.deleted', 'store.synced',
+  'followup.created', 'followup.updated', 'followup.deleted',
 ];
 
 export default function Activity() {

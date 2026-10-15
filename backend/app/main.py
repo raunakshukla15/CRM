@@ -12,7 +12,6 @@ from app.api import (
     customers,
     dashboard,
     followups,
-    integrations,
     interactions,
     orders,
     webhooks,
@@ -85,7 +84,6 @@ def create_app() -> FastAPI:
     app.include_router(orders.router, prefix=settings.API_V1_PREFIX)
     app.include_router(interactions.router, prefix=settings.API_V1_PREFIX)
     app.include_router(followups.router, prefix=settings.API_V1_PREFIX)
-    app.include_router(integrations.router, prefix=settings.API_V1_PREFIX)
 
     @app.on_event("startup")
     def _create_tables_for_development() -> None:

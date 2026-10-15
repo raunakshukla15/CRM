@@ -9,7 +9,6 @@ import Orders from './pages/Orders.jsx';
 import Communications from './pages/Communications.jsx';
 import FollowUps from './pages/FollowUps.jsx';
 import Activity from './pages/Activity.jsx';
-import Integrations from './pages/Integrations.jsx';
 import Settings from './pages/Settings.jsx';
 import SignIn from './pages/SignIn.jsx';
 import SignUp from './pages/SignUp.jsx';
@@ -45,7 +44,6 @@ export default function App() {
         <Route path="/communications" element={<Protected><Communications /></Protected>} />
         <Route path="/followups" element={<Protected><FollowUps /></Protected>} />
         <Route path="/activity" element={<Protected><Activity /></Protected>} />
-        <Route path="/integrations" element={<Protected><Integrations /></Protected>} />
         <Route path="/settings" element={<Protected><Settings /></Protected>} />
         <Route path="*" element={<Protected><Dashboard /></Protected>} />
       </Routes>

@@ -17,11 +17,6 @@ class Settings(BaseSettings):
     WC_WEBHOOK_SECRET: str = "change-me"
     WEBHOOK_SKIP_SIGNATURE: bool = False
 
-    # --- WooCommerce REST API (server-side only — never exposed to frontend) ---
-    WC_STORE_URL: str = ""
-    WC_CONSUMER_KEY: str = ""
-    WC_CONSUMER_SECRET: str = ""
-
     BACKEND_CORS_ORIGINS: list[str] = ["http://localhost:3000", "http://localhost:5173"]
 
     # --- Auth / server-side sessions ---

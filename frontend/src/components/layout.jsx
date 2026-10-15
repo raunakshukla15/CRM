@@ -10,7 +10,6 @@ const NAV = [
   { to: '/communications', label: 'Communications', icon: '✉' },
   { to: '/followups', label: 'Follow-ups', icon: '◔' },
   { to: '/activity', label: 'Activity', icon: '📜' },
-  { to: '/integrations', label: 'Integrations', icon: '⛭' },
   { to: '/settings', label: 'Settings', icon: '⚙' },
 ];
 
